@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>salguero-portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="desktop">
+    <div class="icon" onclick="openWindow('storyWindow')">
+      <img src="https://cdn-icons-png.flaticon.com/512/5951/5951752.png" alt="My Story" width="64" height="64" />
+      <span>My Profile</span>
+    </div>
+    
+    <div class="icon" onclick="openWindow('contactWindow')">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Contact Me" width="64" height="64" />
+      <span>Contact Me</span>
+    </div>
+    <div class="icon" onclick="openWindow('projectsWindow')">
+      <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" alt="Projects" width="64" height="64" />
+      <span>Projects</span>
+    </div>
+    <div class="icon" onclick="openWindow('socialsWindow')">
+      <img src="https://cdn-icons-png.flaticon.com/512/9068/9068734.png" alt="Socials" width="64" height="64" />
+      <span>Socials</span>
+    </div>
+    <div class="icon" onclick="openWindow('tictactoeWindow')">
+      <img src="https://cdn-icons-png.flaticon.com/512/566/566294.png" alt="Tic Tac Toe" width="64" height="64" />
+      <span>Tic Tac Toe</span>
+    </div>
+    <div class="icon" onclick="openWindow('spaceInvadersWindow')">
+      <img src="https://cdn-icons-png.flaticon.com/512/7407/7407995.png" alt="Space Invaders" width="64" height="64" />
+      <span>Space Invaders</span>
+    </div>
+  </div>
+
+
+  <!-- My Story Window -->
+  <div id="storyWindow" class="window hidden">
+    <div class="window-header" onmousedown="dragStart(event)">
+      <span>My Story</span>
+      <div class="window-controls">
+        <button onclick="minimizeWindow('storyWindow')">_</button>
+        <button onclick="maximizeWindow('storyWindow')">▢</button>
+        <button onclick="closeWindow('storyWindow')">X</button>
+      </div>
+    </div>
+    <div class="window-body">
+        <p>Hello! My name is <strong>Beo Alvaro Salguero</strong>, and I am a passionate junior data engineer.</p>
+        <p>I enjoy working with data to uncover insights and help businesses make smarter decisions. I have experience in data processing, cleaning, and building pipelines to ensure data flows smoothly and accurately.</p>
+        <p>Currently, I am focused on learning more about data analysis, machine learning, and cloud technologies to grow my skills and contribute to impactful projects.</p>
+        <p>In my free time, I like to explore new technologies, work on personal coding projects, and stay updated with the latest trends in the data engineering field.</p>
+        <p>I'm excited to continue my journey in data engineering and help turn data into meaningful solutions.</p>
+      </div>
+      
+  </div>
+
+  <!-- Projects Window -->
+  <div id="projectsWindow" class="window hidden">
+    <div class="window-header" onmousedown="dragStart(event)">
+      <span>Projects</span>
+      <div class="window-controls">
+        <button onclick="minimizeWindow('projectsWindow')">_</button>
+        <button onclick="maximizeWindow('projectsWindow')">▢</button>
+        <button onclick="closeWindow('projectsWindow')">X</button>
+      </div>
+    </div>
+    <div class="window-body">
+        <div class="desktop">
+          <div class="project-icon" onclick="window.open('https://beo-alvaro.github.io/ai-chatbot/', '_blank')">
+            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="AI Chatbot" style="width:64px; height:64px;">
+            <div>AI Chatbot</div>
+          </div>
+          <div class="project-icon" onclick="window.open('https://beo-alvaro.github.io/image-recognition/', '_blank')">
+            <img src="https://cdn-icons-png.flaticon.com/512/3105/3105972.png" alt="Image Recognition" style="width:64px; height:64px;">
+            <div>Image Recognition</div>
+          </div>
+          <div class="project-icon" onclick="window.open('https://beo-alvaro.github.io/Republic-Act-No.-10175-expert-system/', '_blank')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2913/2913505.png" alt="Expert System" style="width:64px; height:64px;">
+            <div>RA 10175</div>
+          </div>
+        </div>
+      </div>          
+  </div>
+
+  <!-- Contact Window -->
+  <div id="contactWindow" class="window hidden">
+    <div class="window-header" onmousedown="dragStart(event)">
+      <span>Contact Me</span>
+      <div class="window-controls">
+        <button onclick="minimizeWindow('contactWindow')">_</button>
+        <button onclick="maximizeWindow('contactWindow')">▢</button>
+        <button onclick="closeWindow('contactWindow')">X</button>
+      </div>
+    </div>
+    <div class="window-body">
+        <p>You can reach me at my email:</p>
+        <p><a href="mailto:beoalvarosalguero@gmail.com" style="color: #61dafb; text-decoration: underline;">
+          beoalvarosalguero@gmail.com
+        </a></p>
+      </div>
+  </div>
+
+  <!-- Socials Window -->
+  <div id="socialsWindow" class="window hidden">
+    <div class="window-header" onmousedown="dragStart(event)">
+      <span>Socials</span>
+      <div class="window-controls">
+        <button onclick="minimizeWindow('socialsWindow')">_</button>
+        <button onclick="maximizeWindow('socialsWindow')">▢</button>
+        <button onclick="closeWindow('socialsWindow')">X</button>
+      </div>
+    </div>
+    <div class="window-body">
+        <div style="display: flex; align-items: center; gap: 30px;">
+          <div class="social-icon" onclick="window.open('https://github.com/Beo-Alvaro', '_blank')" style="cursor:pointer; display: inline-flex; flex-direction: column; align-items: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="64" height="64" />
+            <span>GitHub</span>
+          </div>
+          <!-- You can add more social icons here similarly -->
+        </div>
+      </div>
+      
+  </div>
+
+  <!-- Tic Tac Toe Window -->
+  <div id="tictactoeWindow" class="window hidden">
+    <div class="window-header" onmousedown="dragStart(event)">
+      <span>Tic Tac Toe</span>
+      <div class="window-controls">
+        <button onclick="minimizeWindow('tictactoeWindow')">_</button>
+        <button onclick="maximizeWindow('tictactoeWindow')">▢</button>
+        <button onclick="closeWindow('tictactoeWindow')">X</button>
+      </div>
+    </div>
+    <div class="window-body" id="tictactoe-body">
+      <div class="game">
+        <div class="row">
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+        </div>
+        <div class="row">
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+        </div>
+        <div class="row">
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+          <div class="cell" data-cell></div>
+        </div>
+        <button id="restartButton">Restart</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="spaceInvadersWindow" class="window hidden">
+    <div class="window-header" onmousedown="dragStart(event)">
+      <span>Space Invaders</span>
+      <div class="window-controls">
+        <button onclick="minimizeWindow('spaceInvadersWindow')">_</button>
+        <button onclick="maximizeWindow('spaceInvadersWindow')">▢</button>
+        <button onclick="closeWindow('spaceInvadersWindow')">X</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <canvas id="spaceinvaders-canvas"></canvas>
+
+    </div>
+  </div>
+  
+
+  <div class="taskbar">
+    <div id="clock"></div>
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>

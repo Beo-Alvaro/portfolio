@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #1e1e1e;
+    color: #eee;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #2c2c2c;
+    color: #eee;
+    display: flex;
+    justify-content: center;  /* horizontally center */
+    align-items: center;      /* vertically center */
+    font-family: monospace;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    z-index: 1000;  /* high enough to be on top */
+  }
+  
+  #clock {
+    user-select: none;
+    color: #eee;
+  }
+  
+  
+  #clock {
+    user-select: none;
+  }
+  
+  .desktop {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: calc(100vh - 30px); /* Leaves space for taskbar */
+    overflow: auto;
+    position: relative;
+  }
+  
+  .icon {
+    width: 70px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #eee;
+  }
+  
+  .icon img {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto 5px;
+  }
+  
+  .icon span {
+    font-size: 0.85em;
+    word-wrap: break-word;
+  }
+  #projectsWindow .desktop {
+    display: flex;           /* Arrange children in a row */
+    flex-wrap: nowrap;       /* Prevent wrapping */
+    gap: 15px;               /* Space between icons */
+    overflow-x: auto;        /* Horizontal scroll if needed */
+    padding: 10px 0;
+    align-items: flex-start; /* Align icons to the top */
+  }
+  
+  .project-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70px;
+    height: 90px;
+    cursor: pointer;
+    color: #eee;
+    justify-content: flex-start; /* Align content to the top inside each icon */
+    text-align: center;
+    user-select: none;
+  }
+  
+  .project-icon img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  
+  .project-icon div {
+    font-size: 0.85em;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  
+  
+  
+  .window {
+    position: absolute;
+    width: 300px;
+    background: #2c2c2c;
+    border: 1px solid #444;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+  }
+  
+  .window-header {
+    background: #333;
+    padding: 5px 10px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .window-controls button {
+    background: none;
+    border: none;
+    color: gold;
+    font-size: 14px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .window-body {
+    padding: 10px;
+    background: #1a1a1a;
+    color: #eee;
+  }
+
+  #projectsWindow .window-body {
+    max-height: 130px;       /* Limits vertical height to avoid stretching */
+    padding: 10px 15px;      /* Some breathing room */
+    overflow-x: auto;        /* Horizontal scroll if needed */
+    overflow-y: hidden;      /* Prevent vertical scrollbar */
+    box-sizing: border-box;
+    display: flex;           /* Use flexbox to align contents */
+    align-items: flex-start; /* Align contents to top */
+    background-color: #1a1a1a; /* Consistent with your theme */
+  }
+
+  #projectsWindow .desktop {
+    display: flex;
+    gap: 30px;  /* increased gap */
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  #tictactoe-body {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  .cell {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  #socialsWindow .window-body {
+    padding: 10px 15px;
+    background-color: #1a1a1a;
+    display: flex;
+    gap: 30px;               /* space between social icons */
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;        /* horizontal scroll if needed */
+  }
+  
+  #socialsWindow .social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: #eee;
+    user-select: none;
+    width: 70px;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  #socialsWindow .social-icon img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 6px;
+    display: block;
+  }
+  
+  #socialsWindow .social-icon:hover {
+    color: gold;
+  }
+
+  #spaceinvaders-canvas {
+  border: 1px solid white; /* For debugging visibility */
+  background: black;        /* Makes game visible */
+  display: block;
+  margin: 10px auto;
+}
