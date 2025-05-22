@@ -158,7 +158,7 @@ function initSpaceInvaders() {
   canvas.width = 270;
   canvas.height = 300;
 
-  let player = { x: 200, y: 270, width: 20, height: 20, dx: 30, health: 3 }; // dx increased to 8, added health
+  let player = { x: 200, y: 270, width: 20, height: 20, dx: 30 }; // Removed health
   let bullets = [];
   let enemies = [];
   let score = 0;
@@ -178,11 +178,7 @@ function initSpaceInvaders() {
     enemies.forEach(enemy => ctx.fillRect(enemy.x, enemy.y, 20, 20));
   }
 
-  function drawHealth() {
-    ctx.fillStyle = 'red';
-    ctx.font = '16px Arial';
-    ctx.fillText(`Health: ${player.health}`, canvas.width - 100, 20);
-  }
+  // Removed drawHealth function entirely
 
   function update() {
     ctx.fillStyle = 'black';
@@ -192,7 +188,7 @@ function initSpaceInvaders() {
     drawPlayer();
     drawBullets();
     drawEnemies();
-    drawHealth();
+    // Removed drawHealth();
 
     // Move bullets up
     bullets = bullets.map(b => ({ ...b, y: b.y - 5 })).filter(b => b.y > 0);
@@ -215,7 +211,7 @@ function initSpaceInvaders() {
       });
     });
 
-    // Enemy hits player
+    // Enemy hits player - removed health logic, so just remove the block or keep for enemy removal?
     enemies.forEach((enemy, eIndex) => {
       if (
         enemy.x < player.x + player.width &&
@@ -224,11 +220,7 @@ function initSpaceInvaders() {
         enemy.y + 20 > player.y
       ) {
         enemies.splice(eIndex, 1);
-        player.health--;
-        if (player.health <= 0) {
-          alert('Game Over!');
-          resetGame();
-        }
+        // No health decrement or game over alert here now
       }
     });
 
@@ -248,7 +240,7 @@ function initSpaceInvaders() {
   }
 
   function resetGame() {
-    player.health = 3;
+    // No health reset needed
     score = 0;
     bullets = [];
     enemies = [];
